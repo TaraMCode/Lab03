@@ -11,6 +11,7 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // this will display the requested JSP as a view
+        request.setAttribute("message", "---");
         getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
 
     }
@@ -39,16 +40,6 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             return; // very important! Stop the code call.
         }
         
-        if (firstnumber == null || firstnumber.equals("") && secondnumber == null || secondnumber.equals("")) {
-            // Create a helpful message to send to the user
-            request.setAttribute("message", "---");
-            // forward the request and response objects to the JSP
-            //display the form again
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
-
-            return; // very important! Stop the code call.
-        }
-
         else if(firstnumber.matches("[A-Za-z]{1,50}") || secondnumber.matches("[A-Za-z]{1,50}")) {
             request.setAttribute("message", "Invalid");
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
