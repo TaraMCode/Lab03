@@ -20,11 +20,11 @@
             <label>Second:</label>
             <input type="text" name="second_number" value="${secondNumber}" placeholder="2">
             <br>
-            
-            <input type="submit" name="button" class="button1" value="+">
-            <input type="submit" name="button" class="button2" value="-">
-            <input type="submit" name="button" class="button3" value="*">
-            <input type="submit" name="button" class="button4" value="%">         
+
+            <input type="submit" name="button" value="+">
+            <input type="submit" name="button" value="-">
+            <input type="submit" name="button" value="*">
+            <input type="submit" name="button" value="%">   
         </form>
         <p>Result: ${message}</p>
         <a href="age">Age Calculator</a>
